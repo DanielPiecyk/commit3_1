@@ -5,7 +5,7 @@ class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int wybor = 1,wiek;
-    String imie,nazwisko;
+    String imie,nazwisko,data;
     try {
       Service1 s = new Service1();
        while(wybor!=0) 
@@ -33,14 +33,16 @@ class Main {
               nazwisko = sc.nextLine();
               System.out.print("Podaj wiek :\n");
               wiek = sc.nextInt();
-              s.addStudent(new Student(imie, wiek,nazwisko));
+              System.out.print("Podaj datę urodzenia :\n");
+              sc.nextLine();
+              data = sc.nextLine();
+              s.addStudent(new Student(imie, wiek,nazwisko,data));
               break;
               }
           case 0:
             {break;}
         }
     }
-    
     } catch (IOException e) {
 
     }
